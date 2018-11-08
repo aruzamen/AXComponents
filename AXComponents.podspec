@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AXComponents"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Apptegy UI Components classes"
   s.homepage     = "https://github.com/aruzamen/AXComponents"
 
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.platform = :ios, '10.3'
   s.swift_version = "4.1"
   s.source_files  = "*.swift"
-  s.resources     = "Images/**/*.png"
+  s.resources     = "*.xib", "Images/**/*.png"
   s.exclude_files = "Classes/Exclude"
   s.requires_arc = true
 
