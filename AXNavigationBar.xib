@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXNavigationBar" customModule="AXCore" customModuleProvider="target">
+            <connections>
+                <outlet property="calendarButton" destination="cd5-5O-ojM" id="C1i-ch-jJn"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="0X4-39-ywX"/>
+                <outlet property="subtitle" destination="8gz-iU-TkP" id="Wkb-ba-ekQ"/>
+                <outlet property="title" destination="ZLG-RL-H2P" id="5Ag-YH-fdK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="94"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLG-RL-H2P">
+                    <rect key="frame" x="35" y="15" width="149" height="38.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-iU-TkP">
+                    <rect key="frame" x="35" y="62" width="149" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd5-5O-ojM">
+                    <rect key="frame" x="184" y="14.5" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="1Zp-BL-r5V"/>
+                        <constraint firstAttribute="width" constant="65" id="G36-I3-dJ9"/>
+                    </constraints>
+                    <state key="normal" title="cal">
+                        <color key="titleColor" red="0.033104449510000002" green="0.051086597140000002" blue="0.47061777110000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7b-w2-AOy">
+                    <rect key="frame" x="249" y="14.5" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="lYe-Vs-gbC"/>
+                        <constraint firstAttribute="width" constant="65" id="s8U-Gj-BZD"/>
+                    </constraints>
+                    <state key="normal" title="side">
+                        <color key="titleColor" red="0.033104449510000002" green="0.051086597140000002" blue="0.47061777110000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="S7b-w2-AOy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dic-E9-8OD"/>
+                <constraint firstItem="S7b-w2-AOy" firstAttribute="leading" secondItem="cd5-5O-ojM" secondAttribute="trailing" id="EaA-qw-tNh"/>
+                <constraint firstItem="cd5-5O-ojM" firstAttribute="leading" secondItem="8gz-iU-TkP" secondAttribute="trailing" id="J4i-8a-Ino"/>
+                <constraint firstItem="cd5-5O-ojM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LjW-k6-TbR"/>
+                <constraint firstItem="ZLG-RL-H2P" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="QaX-ZW-u1T"/>
+                <constraint firstItem="ZLG-RL-H2P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="Yes-6v-pBK"/>
+                <constraint firstItem="8gz-iU-TkP" firstAttribute="top" secondItem="ZLG-RL-H2P" secondAttribute="bottom" constant="8.5" id="cWC-ZY-Lva"/>
+                <constraint firstItem="cd5-5O-ojM" firstAttribute="leading" secondItem="ZLG-RL-H2P" secondAttribute="trailing" id="fcN-fT-5Hs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S7b-w2-AOy" secondAttribute="trailing" id="pJC-CG-GaF"/>
+                <constraint firstItem="8gz-iU-TkP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="wN3-9k-rfK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="43.200000000000003" y="323.83808095952025"/>
+        </view>
+    </objects>
+</document>
