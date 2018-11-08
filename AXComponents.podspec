@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AXComponents"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Apptegy UI Components classes"
   s.homepage     = "https://github.com/aruzamen/AXComponents"
 

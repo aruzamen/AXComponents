@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="calendarButton" destination="cd5-5O-ojM" id="C1i-ch-jJn"/>
                 <outlet property="containerView" destination="iN0-l3-epB" id="0X4-39-ywX"/>
+                <outlet property="sideMenuButton" destination="S7b-w2-AOy" id="reH-Hw-kbX"/>
                 <outlet property="subtitle" destination="8gz-iU-TkP" id="Wkb-ba-ekQ"/>
                 <outlet property="title" destination="ZLG-RL-H2P" id="5Ag-YH-fdK"/>
             </connections>
@@ -51,7 +52,7 @@
                         <constraint firstAttribute="height" constant="65" id="lYe-Vs-gbC"/>
                         <constraint firstAttribute="width" constant="65" id="s8U-Gj-BZD"/>
                     </constraints>
-                    <state key="normal" title="side">
+                    <state key="normal">
                         <color key="titleColor" red="0.033104449510000002" green="0.051086597140000002" blue="0.47061777110000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                 </button>

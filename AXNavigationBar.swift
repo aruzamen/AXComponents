@@ -14,7 +14,14 @@ class AXNavigationBar: UIView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var containerView: UIView!
+    
+    let defaultSideMenuIcon = "navbar-scores-side-button"
+    let eventsSideMenuIcon = "navbar-events-side-button"
+    let scoresSideMenuIcon = "navbar-scores-side-button"
+    let notificationsSideMenuIcon = "navbar-notifications-side-button"
+    let settingsSideMenuIcon = "navbar-settings-side-button"
     
     @IBInspectable var sectionName: String! {
         get {
@@ -22,6 +29,7 @@ class AXNavigationBar: UIView {
         }
         set {
             self.title.text = newValue
+            self.setSideMenuIcon(newValue)
         }
     }
     
@@ -45,6 +53,7 @@ class AXNavigationBar: UIView {
     }
     
     private func commonInit() {
+        self.setSideMenuIcon("default")
         containerView = loadViewFromNib()
         containerView.frame = self.bounds
         containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -59,4 +68,22 @@ class AXNavigationBar: UIView {
         return view
     }
 
+    private func setSideMenuIcon(_ section: String) {
+        var sectionIcon: String
+        
+        switch section {
+        case "Events":
+            sectionIcon = eventsSideMenuIcon
+        case "Scores":
+            sectionIcon = scoresSideMenuIcon
+        case "Notifications":
+            sectionIcon = notificationsSideMenuIcon
+        case "Settings":
+            sectionIcon = settingsSideMenuIcon
+        default:
+            sectionIcon = defaultSideMenuIcon
+        }
+        
+        self.sideMenuButton.setBackgroundImage(UIImage(named: sectionIcon), for: .normal)
+    }
 }
