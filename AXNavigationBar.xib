@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXNavigationBar" customModule="AXCore" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXNavigationBar" customModule="AXComponents" customModuleProvider="target">
             <connections>
                 <outlet property="calendarButton" destination="cd5-5O-ojM" id="C1i-ch-jJn"/>
                 <outlet property="containerView" destination="iN0-l3-epB" id="0X4-39-ywX"/>
@@ -41,7 +41,7 @@
                         <constraint firstAttribute="height" constant="65" id="1Zp-BL-r5V"/>
                         <constraint firstAttribute="width" constant="65" id="G36-I3-dJ9"/>
                     </constraints>
-                    <state key="normal" title="cal">
+                    <state key="normal" backgroundImage="navbar-calendar-button.png">
                         <color key="titleColor" red="0.033104449510000002" green="0.051086597140000002" blue="0.47061777110000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                 </button>
@@ -74,4 +74,7 @@
             <point key="canvasLocation" x="43.200000000000003" y="323.83808095952025"/>
         </view>
     </objects>
+    <resources>
+        <image name="navbar-calendar-button.png" width="140" height="140"/>
+    </resources>
 </document>
