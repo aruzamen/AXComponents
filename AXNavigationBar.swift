@@ -15,13 +15,11 @@ class AXNavigationBar: UIView {
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var sideMenuButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var containerView: UIView!
-    
-    let defaultSideMenuIcon = "navbar-scores-side-button"
-    let eventsSideMenuIcon = "navbar-events-side-button"
-    let scoresSideMenuIcon = "navbar-scores-side-button"
-    let notificationsSideMenuIcon = "navbar-notifications-side-button"
-    let settingsSideMenuIcon = "navbar-settings-side-button"
+    @IBOutlet weak var calendarView: UIView!
+    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
+    var calendarHeight: CGFloat = 0
     
     @IBInspectable var sectionName: String! {
         get {
@@ -29,7 +27,6 @@ class AXNavigationBar: UIView {
         }
         set {
             self.title.text = newValue
-            self.setSideMenuIcon(newValue)
         }
     }
     
@@ -39,6 +36,24 @@ class AXNavigationBar: UIView {
         }
         set {
             self.subtitle.text = newValue
+        }
+    }
+    
+    @IBInspectable var calendarIcon: UIImage! {
+        get {
+            return self.calendarButton.backgroundImage(for: .normal)
+        }
+        set {
+            self.calendarButton.setBackgroundImage(newValue, for: .normal)
+        }
+    }
+    
+    @IBInspectable var sideMenuIcon: UIImage! {
+        get {
+            return self.sideMenuButton.backgroundImage(for: .normal)
+        }
+        set {
+            self.sideMenuButton.setBackgroundImage(newValue, for: .normal)
         }
     }
     
@@ -53,37 +68,45 @@ class AXNavigationBar: UIView {
     }
     
     private func commonInit() {
-        self.setSideMenuIcon("default")
         containerView = loadViewFromNib()
         containerView.frame = self.bounds
         containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         addSubview(containerView)
+        
+        calendarView.isHidden = true
+        calendarHeight = calendarViewHeight.constant
+        calendarViewHeight.constant = 0
+        
+        closeButton.layer.masksToBounds = false
+        closeButton.layer.shadowOffset = CGSize(width: 0, height: 10)
+        closeButton.layer.shadowColor = UIColor.gray.cgColor
+        closeButton.layer.shadowOpacity = 0.50
+        closeButton.layer.shadowRadius = 10
     }
     
     func loadViewFromNib() -> UIView! {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
         return view
     }
-
-    private func setSideMenuIcon(_ section: String) {
-        var sectionIcon: String
+    
+    @IBAction func calendarButtonTapped(_ sender: Any) {
+        self.toggleCalendarView()
+    }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        self.toggleCalendarView()
+    }
+    
+    private func toggleCalendarView() {
+        calendarView.isHidden = !calendarView.isHidden
         
-        switch section {
-        case "Events":
-            sectionIcon = eventsSideMenuIcon
-        case "Scores":
-            sectionIcon = scoresSideMenuIcon
-        case "Notifications":
-            sectionIcon = notificationsSideMenuIcon
-        case "Settings":
-            sectionIcon = settingsSideMenuIcon
-        default:
-            sectionIcon = defaultSideMenuIcon
+        if calendarView.isHidden {
+            calendarViewHeight.constant = 0
+        } else {
+            calendarViewHeight.constant = calendarHeight
         }
-        
-        self.sideMenuButton.setBackgroundImage(UIImage(named: sectionIcon), for: .normal)
     }
 }

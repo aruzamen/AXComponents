@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AXComponents"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "Apptegy UI Components classes"
   s.homepage     = "https://github.com/aruzamen/AXComponents"
 
@@ -24,5 +24,7 @@ Pod::Spec.new do |s|
   s.resources     = "*.xib", "Images/**/*.png"
   s.exclude_files = "Classes/Exclude"
   s.requires_arc = true
+
+  s.dependency 'FSCalendar'
 
 end
