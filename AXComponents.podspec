@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
   s.requires_arc = true
 
-  s.dependency 'FSCalendar'
+  s.dependency 'FSCalendar', :modular_headers => true
 
 end
