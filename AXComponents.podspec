@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AXComponents"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "Apptegy UI Components classes"
   s.homepage     = "https://github.com/aruzamen/AXComponents"
 
@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
   s.requires_arc = true
 
-  s.dependency 'FSCalendar', :modular_headers => true
+  s.dependency 'CVCalendar'
 
 end
