@@ -19,6 +19,7 @@ class AXNavigationBar: UIView {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var calendarContainer: UIView!
     var calendarHeight: CGFloat = 0
     
     @IBInspectable var sectionName: String! {
@@ -82,6 +83,14 @@ class AXNavigationBar: UIView {
         closeButton.layer.shadowColor = UIColor.gray.cgColor
         closeButton.layer.shadowOpacity = 0.50
         closeButton.layer.shadowRadius = 10
+        
+        calendarContainer.layer.masksToBounds = false
+        calendarContainer.layer.shadowOffset = CGSize(width: 0, height: 10)
+        calendarContainer.layer.shadowColor = UIColor.gray.cgColor
+        calendarContainer.layer.shadowOpacity = 0.20
+        calendarContainer.layer.shadowRadius = 10
+        calendarContainer.layer.cornerRadius = 20
+        
     }
     
     func loadViewFromNib() -> UIView! {
